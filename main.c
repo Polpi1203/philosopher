@@ -1,30 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   philosopher.h                                      :+:      :+:    :+:   */
+/*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: polpi <polpi@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/04/16 14:43:20 by polpi             #+#    #+#             */
-/*   Updated: 2023/04/16 17:34:21 by polpi            ###   ########.fr       */
+/*   Created: 2023/04/16 17:12:39 by polpi             #+#    #+#             */
+/*   Updated: 2023/04/16 17:32:11 by polpi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <pthread.h>
-#include <unistd.h>
-#include <stdio.h>
-#include <stdlib.h>
-#include "../libft/srcs/libft.h"
+#include "philosopher.h"
 
-typedef struct s_config {
-	int	number_of_philosophers;
-	int	number_of_forks;
-	int	time_to_die;
-	int	time_to_eat;
-	int	time_to_sleep;
-}	t_config;
-
-
-//parsing
-
-void	parser(char **av);
+int main(int ac, char **av)
+{
+    if (ac == 5)
+    {
+        parser(av);
+    }
+    else
+        printf("Missing arguments\n");
+    return (0);
+}
