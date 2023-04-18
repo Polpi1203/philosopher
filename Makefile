@@ -6,14 +6,14 @@
 #    By: polpi <polpi@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/04/16 14:43:23 by polpi             #+#    #+#              #
-#    Updated: 2023/04/16 17:25:15 by polpi            ###   ########.fr        #
+#    Updated: 2023/04/18 19:06:28 by polpi            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 # gcc -fsanitize=thread -g threads.c && ./a.out --> Affiche un warning pour voir si il y'a une data race
 
 CC = gcc
-CFLAGS = -Wall -Wextra -Werror -fsanitize=thread -g
+CFLAGS = -Wall -Wextra -Werror -fsanitize=thread -g -pthread
 NAME = philo
 LIBFT = libft/libft.a
 SRCS = $(wildcard *.c) $(wildcard */*.c)
