@@ -6,7 +6,7 @@
 /*   By: polpi <polpi@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/16 14:43:20 by polpi             #+#    #+#             */
-/*   Updated: 2023/04/18 19:14:04 by polpi            ###   ########.fr       */
+/*   Updated: 2023/04/19 16:32:03 by polpi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,3 +33,9 @@ void	parser(char **av);
 
 void *routine(void *arg);
 int init_threads(void);
+
+//actions
+
+void    action_eat(void);
+void   	action_sleep(void);
+void    action_think(void);

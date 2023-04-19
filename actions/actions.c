@@ -1,20 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   routine.c                                          :+:      :+:    :+:   */
+/*   actions.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: polpi <polpi@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/04/18 19:08:40 by polpi             #+#    #+#             */
-/*   Updated: 2023/04/19 16:18:01 by polpi            ###   ########.fr       */
+/*   Created: 2023/04/19 16:30:28 by polpi             #+#    #+#             */
+/*   Updated: 2023/04/19 16:32:11 by polpi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../philosopher.h"
-
-void *routine(void *arg)
+void    action_eat(void)
 {
-    printf("Thread -> %s\n", (char *)arg);
-    sleep(3);
-    return (NULL);
+	
+}
+
+void    action_sleep(void)
+{
+
+}
+
+void    action_think(void)
+{
+	
 }
