@@ -6,11 +6,11 @@
 /*   By: afaucher <afaucher@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/18 19:08:40 by polpi             #+#    #+#             */
-/*   Updated: 2023/04/20 13:54:56 by afaucher         ###   ########.fr       */
+/*   Updated: 2023/04/20 16:14:55 by afaucher         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../philosopher.h"
+#include "../header/functions.h"
 
 int test = 0;
 pthread_mutex_t mutex;
@@ -18,11 +18,17 @@ pthread_mutex_t mutex;
 void *routine(void *arg)
 {
 	(void)arg;
-	pthread_mutex_lock(&mutex);
-    for (int i = 0; i < 1000000; i++)
-		test++;
-    sleep(1);
-	pthread_mutex_unlock(&mutex);
+
+	action_eat();
+	action_think();
+	action_sleep();
+
+	// TEST // 
+	// pthread_mutex_lock(&mutex);
+    // for (int i = 0; i < 1000000; i++)
+	// 	test++;
+    // sleep(1);
+	// pthread_mutex_unlock(&mutex);
     return (NULL);
 }   
 

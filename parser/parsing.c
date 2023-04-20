@@ -6,11 +6,11 @@
 /*   By: afaucher <afaucher@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/16 16:59:47 by polpi             #+#    #+#             */
-/*   Updated: 2023/04/20 13:32:44 by afaucher         ###   ########.fr       */
+/*   Updated: 2023/04/20 16:00:12 by afaucher         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../philosopher.h"
+#include "../header/functions.h"
 
 void	parser(char **av)
 {
