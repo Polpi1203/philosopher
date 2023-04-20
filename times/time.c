@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   time.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: afaucher <afaucher@student.42.fr>          +#+  +:+       +#+        */
+/*   By: polpi <polpi@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/20 15:53:50 by afaucher          #+#    #+#             */
-/*   Updated: 2023/04/20 16:09:23 by afaucher         ###   ########.fr       */
+/*   Updated: 2023/04/20 18:38:45 by polpi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ long int get_actual_time(void)
 	long int		microseconde;
 	long int		seconde;
 	long int		actual_time;
-	struct timeval	time;
+	t_timeval	time;
 
 
 	gettimeofday(&time, NULL);
