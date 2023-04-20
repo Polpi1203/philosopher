@@ -3,18 +3,49 @@
 /*                                                        :::      ::::::::   */
 /*   routine.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: polpi <polpi@student.42.fr>                +#+  +:+       +#+        */
+/*   By: afaucher <afaucher@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/18 19:08:40 by polpi             #+#    #+#             */
-/*   Updated: 2023/04/19 16:18:01 by polpi            ###   ########.fr       */
+/*   Updated: 2023/04/20 13:54:56 by afaucher         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../philosopher.h"
 
+int test = 0;
+pthread_mutex_t mutex;
+
 void *routine(void *arg)
 {
-    printf("Thread -> %s\n", (char *)arg);
-    sleep(3);
+	(void)arg;
+	pthread_mutex_lock(&mutex);
+    for (int i = 0; i < 1000000; i++)
+		test++;
+    sleep(1);
+	pthread_mutex_unlock(&mutex);
     return (NULL);
+}   
+
+int init_threads()
+{
+	pthread_t	t1;
+	pthread_t	t2;
+	//char	*test;
+	// char	*test2;
+
+	// test = "Hello amigo";
+	// test2 = "Goodbye amigo";
+
+	//Verouiller avec un mutex, faire l'action et deverouiller le mutex !! 
+
+	pthread_mutex_init(&mutex, NULL);
+	pthread_create(&t1, NULL, &routine, NULL);
+	pthread_create(&t2, NULL, &routine, NULL);
+	// Attendre que le thread s'éxecute 
+	pthread_join(t1, NULL);
+	pthread_join(t2, NULL);
+	printf("Number of test : %d\n", test);
+	//Destroy mutex
+	pthread_mutex_destroy(&mutex);
+	return (0);
 }

@@ -1,27 +1,39 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   actions.c                                          :+:      :+:    :+:   */
+/*   structs.h                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: afaucher <afaucher@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/04/19 16:30:28 by polpi             #+#    #+#             */
-/*   Updated: 2023/04/20 13:32:24 by afaucher         ###   ########.fr       */
+/*   Created: 2023/04/20 13:54:44 by afaucher          #+#    #+#             */
+/*   Updated: 2023/04/20 13:57:58 by afaucher         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-void    action_eat()
-{
-	// Mutex pour verouiller les forks, printf, usleep with time_to_eat, deverouiller les forks 
+#ifndef STRUCTS_H
+# define STRUCTS_H
 
-}
 
-void    action_sleep(void)
-{
+#include <pthread.h>
+#include <unistd.h>
+#include <stdio.h>
+#include <stdlib.h>
+#include "functions.h"
+#include "libft/srcs/libft.h"
 
-}
+//parsing
 
-void    action_think(void)
-{
-	
-}
+void	parser(char **av);
+
+//threads
+
+void *routine(void *arg);
+int init_threads(void);
+
+//actions
+
+void    action_eat(void);
+void   	action_sleep(void);
+void    action_think(void);
+
+#endif

@@ -1,27 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   actions.c                                          :+:      :+:    :+:   */
+/*   functions.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: afaucher <afaucher@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/04/19 16:30:28 by polpi             #+#    #+#             */
-/*   Updated: 2023/04/20 13:32:24 by afaucher         ###   ########.fr       */
+/*   Created: 2023/04/20 13:55:13 by afaucher          #+#    #+#             */
+/*   Updated: 2023/04/20 13:57:28 by afaucher         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-void    action_eat()
+#ifndef FUNCTIONS_H
+# define FUNCTIONS_H
+
+# define EAT 0
+# define SLEEP 1
+# define THINK 2
+# define DIE 3
+
+
+typedef struct s_philosopher
 {
-	// Mutex pour verouiller les forks, printf, usleep with time_to_eat, deverouiller les forks 
+    int id;
+	int	number_of_philosophers;
+    int time_to_die;
+    int time_to_eat;
+    int time_to_sleep;
+    pthread_mutex_t *left_fork;
+    pthread_mutex_t *right_fork;
+}               t_ph;
 
-}
-
-void    action_sleep(void)
-{
-
-}
-
-void    action_think(void)
-{
-	
-}
+#endif
